@@ -14,4 +14,10 @@ app.use(express.urlencoded({extended: true,limit:"16kb"}))
 app.use(cookieParser())
 //to store common data in public folder
 app.use(express.static("public"))
-export default app
+
+//routes import 
+import userRouter from "./routes/user.routes.js";
+
+app.use("/api/v1/users",userRouter)
+
+export default app;

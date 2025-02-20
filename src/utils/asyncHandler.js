@@ -3,7 +3,7 @@
 //  If an error occurs, it automatically forwards it to Express's built-in error handler.
 
 const asyncHandler = (requestHandeler)=>{
-    (req,res,next) => {
+    return (req,res,next) => {
         Promise.resolve(requestHandeler(req,res,next))
         .catch((err)=>next(err))
     }
